@@ -5,12 +5,12 @@
 
 typedef struct
 {
-    int Card[4];
+    float Card[4];
 } Cards;
 
 #define card(In, N) (In).Card[N]
 
-void CreateCards(Cards *AC, int c1, int c2, int c3, int c4);
+void CreateCards(Cards *AC, float c1, float c2, float c3, float c4);
 
 void StringToCards(Cards *AC, char String[100]);
 
@@ -22,7 +22,7 @@ void GenerateCards(Cards *AC);
 
 void PrintCards(Cards AC);
 
-void PrintCardsInt(int cards);
+void PrintCardsInt(float cards);
 
 int CharToInt(char CC);
 

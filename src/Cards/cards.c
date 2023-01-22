@@ -4,7 +4,7 @@
 #include <time.h>
 #include "cards.h"
 
-void CreateCards(Cards *AC, int c1, int c2, int c3, int c4)
+void CreateCards(Cards *AC, float c1, float c2, float c3, float c4)
 {
     card((*AC), 0) = c1;
     card((*AC), 1) = c2;
@@ -27,7 +27,7 @@ void StringToCards(Cards *AC, char String[100])
         {
             currNum = 10 + CharToInt(ptr[1]);
         }
-        card((*AC), numCard) = currNum;
+        card((*AC), numCard) = (float)currNum;
         numCard++;
         ptr = strtok(NULL, delim);
     }
@@ -59,7 +59,7 @@ void GenerateCards(Cards *AC)
     int c3 = rand() % 13 + 1;
     int c4 = rand() % 13 + 1;
 
-    CreateCards(AC, c1, c2, c3, c4);
+    CreateCards(AC, (float)c1, (float)c2, (float)c3, (float)c4);
 }
 
 void PrintCards(Cards AC)
@@ -72,30 +72,30 @@ void PrintCards(Cards AC)
     }
 }
 
-void PrintCardsInt(int cards)
+void PrintCardsInt(float cards)
 {
-    if (cards > 10 || cards < 2)
+    if (cards > 10.0 || cards < 2.0)
     {
-        if (cards == 11)
+        if (cards == 11.0)
         {
             printf("J");
         }
-        else if (cards == 12)
+        else if (cards == 12.0)
         {
             printf("Q");
         }
-        else if (cards == 13)
+        else if (cards == 13.0)
         {
             printf("K");
         }
-        else if (cards == 1)
+        else if (cards == 1.0)
         {
             printf("A");
         }
     }
     else
     {
-        printf("%d", cards);
+        printf("%.0f", cards);
     }
 }
 
