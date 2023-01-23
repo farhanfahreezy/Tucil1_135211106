@@ -10,26 +10,37 @@ int main()
     GenerateCards(&AC);
     printf("Solusi anda Adalah : \n");
     CreateSolution(&S1, AC, 1, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    printf("%.0f = ", Calculate(S1));
     PrintSolution(S1);
     CreateSolution(&S1, AC, 1, 2, 3, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0);
+    printf("%.0f = ", Calculate(S1));
     PrintSolution(S1);
     CreateSolution(&S1, AC, 1, 2, 3, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0);
+    printf("%.0f = ", Calculate(S1));
     PrintSolution(S1);
     CreateSolution(&S1, AC, 1, 2, 3, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0);
+    printf("%.0f = ", Calculate(S1));
     PrintSolution(S1);
     CreateSolution(&S1, AC, 1, 2, 3, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0);
+    printf("%.0f = ", Calculate(S1));
     PrintSolution(S1);
     CreateSolution(&S1, AC, 1, 2, 3, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0);
+    printf("%.0f = ", Calculate(S1));
     PrintSolution(S1);
     CreateSolution(&S1, AC, 1, 2, 3, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1);
+    printf("%.0f = ", Calculate(S1));
     PrintSolution(S1);
     CreateSolution(&S1, AC, 1, 2, 3, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0);
+    printf("%.0f = ", Calculate(S1));
     PrintSolution(S1);
     CreateSolution(&S1, AC, 1, 2, 3, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0);
+    printf("%.0f = ", Calculate(S1));
     PrintSolution(S1);
     CreateSolution(&S1, AC, 1, 2, 3, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1);
+    printf("%.0f = ", Calculate(S1));
     PrintSolution(S1);
     CreateSolution(&S1, AC, 1, 2, 3, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1);
+    printf("%.0f = ", Calculate(S1));
     PrintSolution(S1);
 }
 

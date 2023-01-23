@@ -1,6 +1,7 @@
 {
   "files.associations": {
     "arraycard.h": "c",
-    "solution.h": "c"
+    "solution.h": "c",
+    "arraysolution.h": "c"
   }
 }

@@ -23,4 +23,12 @@ void PrintSolution(Solution Sol);
 
 void PrintOp(int op);
 
+float Calculate(Solution Sol);
+
+float Calculate4Card(int op1, int op2, int op3, float c1, float c2, float c3, float c4);
+
+float Calculate3Card(int op1, int op2, float c1, float c2, float c3);
+
+float Calculate2Card(int op, float c1, float c2);
+
 #endif
