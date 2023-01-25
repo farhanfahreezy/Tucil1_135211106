@@ -20,17 +20,16 @@ void WritetoTxt(ArraySolution AS)
     for (i = 0; i < Neff(AS); i++)
     {
         SolToString(AS.ArrSol[i], file);
-        // char String[35];
-        // SolToString(AS.ArrSol[i], String);
-        // fputc(*String, file);
     }
 
-    // close the file
     fclose(file);
 }
 
 void Solver24(Cards AC)
 {
+    clock_t start, end;
+    start = clock();
+
     int Choice;
     Solution Sol, SolC;
     ArraySolution AS;
@@ -44,8 +43,13 @@ void Solver24(Cards AC)
 
     LexicographicPermutation(&AS, &Sol, ArrayPermutation);
 
+    end = clock();
+    double duration = ((double)end - start) / CLOCKS_PER_SEC;
+
     printf("\n\nDitemukan %d Solusi!\n", Neff(AS));
     PrintArraySolution(AS);
+    printf("\n");
+    printf("Waktu eksekusi : %f", duration);
     printf("\n");
     printf("Apakah Solusi ingin disimpan?\n");
     printf("(1) Ya\n(2) Tidak\n");
