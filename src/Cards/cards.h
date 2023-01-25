@@ -16,6 +16,8 @@ void StringToCards(Cards *AC, char String[100]);
 
 boolean CheckCards(char String[100]);
 
+boolean CheckLetter(char Let);
+
 void ReadCards(Cards *AC);
 
 void GenerateCards(Cards *AC);
@@ -25,5 +27,11 @@ void PrintCards(Cards AC);
 void PrintCardsInt(float cards);
 
 int CharToInt(char CC);
+
+void SortCards(Cards *AC);
+
+void Swap(Cards *AC, int i, int j);
+
+void Reverse(Cards *AC, int i);
 
 #endif

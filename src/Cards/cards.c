@@ -29,26 +29,150 @@ void StringToCards(Cards *AC, char String[100])
         }
         card((*AC), numCard) = (float)currNum;
         numCard++;
+        printf("%s\n", ptr);
         ptr = strtok(NULL, delim);
     }
 }
 
 boolean CheckCards(char String[100])
 {
+    int numCard = 0;
+    char delim[] = " ";
+    char *ptr = strtok(String, delim);
+    int i;
+
+    while (ptr != NULL)
+    {
+        if (numCard > 3)
+        {
+            return false;
+        }
+        else if (numCard == 3)
+        {
+            if (strlen(ptr) > 3)
+            {
+                return false;
+            }
+            else
+            {
+                if (ptr[1] == 10)
+                {
+                    if (!CheckLetter(ptr[0]))
+                    {
+                        return false;
+                    }
+                }
+                else if (ptr[2] == 10)
+                {
+                    if (ptr[0] != '1' || (ptr[0] < 48 || ptr[0] > 51))
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+        else
+        {
+            if (strlen(ptr) > 2)
+            {
+                return false;
+            }
+            else
+            {
+                if (strlen(ptr) == 2)
+                {
+                    if (ptr[0] != '1' || (ptr[0] < 48 || ptr[0] > 51))
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    if (!CheckLetter(ptr[0]))
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
+        numCard++;
+        ptr = strtok(NULL, delim);
+    }
     return true;
+}
+
+boolean CheckLetter(char Let)
+{
+    switch (Let)
+    {
+    case 49:
+        return true;
+        break;
+    case 50:
+        return true;
+        break;
+    case 51:
+        return true;
+        break;
+    case 52:
+        return true;
+        break;
+    case 53:
+        return true;
+        break;
+    case 54:
+        return true;
+        break;
+    case 55:
+        return true;
+        break;
+    case 56:
+        return true;
+        break;
+    case 57:
+        return true;
+        break;
+    case 65:
+        return true;
+        break;
+    case 74:
+        return true;
+        break;
+    case 75:
+        return true;
+        break;
+    case 81:
+        return true;
+        break;
+    default:
+        return false;
+        break;
+    }
 }
 
 void ReadCards(Cards *AC)
 {
     char String[100];
-
+    char String2[100];
+    printf("Masukkan Kartu Anda\n");
+    printf("Format (X X X X)\n");
+    printf("Kartu :\n");
     fgets(String, 100, stdin);
+    strcpy(String2, String);
     while (!CheckCards(String))
     {
-        printf("Input Salah!\n");
+        printf("Input Salah!\n\n");
+        printf("Masukkan Kartu Anda\n");
+        printf("Format (X X X X)\n");
+        printf("Kartu :\n");
         fgets(String, 100, stdin);
+        strcpy(String2, String);
     }
-    StringToCards(AC, String);
+    StringToCards(AC, String2);
 }
 
 void GenerateCards(Cards *AC)
@@ -156,5 +280,55 @@ int CharToInt(char CC)
     else if (CC == 'K')
     {
         return 13;
+    }
+}
+
+void Reverse(Cards *AC, int i)
+{
+    float temp;
+    if (i == 1)
+    {
+        temp = card(*AC, 1);
+        card(*AC, 1) = card(*AC, 3);
+        card(*AC, 3) = temp;
+    }
+    else // i == 2
+    {
+        temp = card(*AC, 2);
+        card(*AC, 2) = card(*AC, 3);
+        card(*AC, 3) = temp;
+    }
+}
+
+void Swap(Cards *AC, int i, int j)
+{
+    float temp;
+    temp = card(*AC, i - 1);
+    card(*AC, i - 1) = card(*AC, j);
+    card(*AC, j) = temp;
+    if (i != 3)
+    {
+        Reverse(AC, i);
+    }
+}
+
+void SortCards(Cards *AC)
+{
+    int i, j;
+    float temp;
+    int idxtemp;
+    for (i = 0; i < 4; i++)
+    {
+        temp = 14.0;
+        for (j = i; j < 4; j++)
+        {
+            if (card(*AC, j) < temp)
+            {
+                temp = card(*AC, j);
+                idxtemp = j;
+            }
+        }
+        card(*AC, idxtemp) = card(*AC, i);
+        card(*AC, i) = temp;
     }
 }

@@ -13,19 +13,19 @@ a + b + c + d
 ========================================
 need 10 brackets placement
 
-0 1     2 3   4   5   6 7     8 9
-  i       i   i   i   i       i
-. . a + . . b . + . c . . + d . .   empty
-. ( a + . . b ) + . c . . + d . .   1 group of 2                        2
-. . a + . ( b . + . c ) . + d . .   1 group of 2                        2
-. . a + . . b . + ( c . . + d ) .   1 group of 2                        2
-. ( a + . . b ) + ( c . . + d ) .   2 group of 2                        4
-( . a + . . b . + . c . ) + d . .   1 group of 3                        4
-. . a + ( . b . + . c . . + d . )   1 group of 3                        4
-( ( a + . . b ) + . c . ) + d . .   1 group of 2 inside group of 3      6
-( . a + . ( b . + . c ) ) + d . .   1 group of 2 inside group of 3      6
-. . a + ( ( b . + . c ) . + d . )   1 group of 2 inside group of 3      6
-. . a + ( . b . + ( c . . + d ) )   1 group of 2 inside group of 3      6
+  0 1     2 3   4   5   6 7     8 9
+    i       i   i   i   i       i
+0 . . a + . . b . + . c . . + d . .   empty
+1 . ( a + . . b ) + . c . . + d . .   1 group of 2                        2
+2 . . a + . ( b . + . c ) . + d . .   1 group of 2                        2
+3 . . a + . . b . + ( c . . + d ) .   1 group of 2                        2
+4 . ( a + . . b ) + ( c . . + d ) .   2 group of 2                        4
+5 ( . a + . . b . + . c . ) + d . .   1 group of 3                        4
+6 . . a + ( . b . + . c . . + d . )   1 group of 3                        4
+7 ( ( a + . . b ) + . c . ) + d . .   1 group of 2 inside group of 3      6
+8 ( . a + . ( b . + . c ) ) + d . .   1 group of 2 inside group of 3      6
+9 . . a + ( ( b . + . c ) . + d . )   1 group of 2 inside group of 3      6
+0 . . a + ( . b . + ( c . . + d ) )   1 group of 2 inside group of 3      6
 
 = 11 combination
 ========================================
@@ -36,3 +36,16 @@ total 16896 permutation (24x64x11)
 (-) (2112) if all operations are just add or subtract then all brackets are ignored
 
 total effective permutations 9600
+
+a b c d
+a b d c
+a d b c
+d a b c
+d a c b
+d c a b
+c d a b
+c d b a
+c b d a
+b c d a
+b c a d
+b a c d

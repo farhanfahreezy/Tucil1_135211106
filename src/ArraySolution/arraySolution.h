@@ -27,4 +27,14 @@ void AddArray(ArraySolution *AS, Solution Sol);
 
 void PrintArraySolution(ArraySolution AS);
 
+void EmptyPermutationArray(int *array);
+
+int CheckInArray(Cards Card, int *array);
+
+void InsertatArray(int *array, Cards card, int index);
+
+void LexicographicPermutation(ArraySolution *AS, Solution *Sol, int *ArrayPermutation);
+
+void FindAnswer(ArraySolution *AS, Solution *Sol, int *allAdd, int *allTimes);
+
 #endif

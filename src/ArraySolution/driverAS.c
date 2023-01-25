@@ -10,9 +10,9 @@ int main()
     CreateArraySolution(&AS, 100);
     GenerateCards(&AC);
 
-    CreateSolution(&S1, AC, 1, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    CreateSolution(&S1, AC);
     AddArray(&AS, S1);
-    CreateSolution(&S1, AC, 1, 2, 3, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0);
+    CreateSolution(&S1, AC);
     AddArray(&AS, S1);
     printf("Solusi anda Adalah : \n");
     PrintArraySolution(AS);
