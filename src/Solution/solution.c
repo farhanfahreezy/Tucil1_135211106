@@ -237,9 +237,10 @@ float Calculate(Solution Sol)
         }
         else
         {
-            frac[2] = Calculate2Card(solOp(Sol, 2), solCard(Sol, 2), solCard(Sol, 3));
-            frac[1] = Calculate2Card(solOp(Sol, 1), solCard(Sol, 1), frac[2]);
-            result = Calculate2Card(solOp(Sol, 0), solOp(Sol, 0), frac[1]);
+            // frac[2] = Calculate2Card(solOp(Sol, 2), solCard(Sol, 2), solCard(Sol, 3));
+            // frac[1] = Calculate2Card(solOp(Sol, 1), solCard(Sol, 1), frac[2]);
+            // result = Calculate2Card(solOp(Sol, 0), solOp(Sol, 0), frac[1]);
+            result = 0;
         }
         break;
     default:
