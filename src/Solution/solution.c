@@ -38,10 +38,12 @@ void PrintSolution(Solution Sol)
     {
         printf("( ");
     }
+
     PrintCardsInt(solCard(Sol, 0));
     printf(" ");
     PrintOp(solOp(Sol, 0));
     printf(" ");
+
     if (solBr(Sol) == 6 || solBr(Sol) == 9 || solBr(Sol) == 10)
     {
         printf("( ");
@@ -50,14 +52,18 @@ void PrintSolution(Solution Sol)
     {
         printf("( ");
     }
+
     PrintCardsInt(solCard(Sol, 1));
     printf(" ");
+
     if (solBr(Sol) == 1 || solBr(Sol) == 4 || solBr(Sol) == 7)
     {
         printf(") ");
     }
+
     PrintOp(solOp(Sol, 1));
     printf(" ");
+
     if (solBr(Sol) == 3 || solBr(Sol) == 4 || solBr(Sol) == 10)
     {
         printf("( ");
@@ -333,15 +339,186 @@ void NextOp(Solution *Sol)
     }
 }
 
-// 0 0 0 lurus
-// 0 0 1 kanan
-// 0 1 0 tengah
-// 0 1 1 tengah kanan
-// 1 0 0 lurus
-// 1 0 1 kanan kiri
-// 1 1 0 lurus
-// 1 1 1 lurus
-// lurus 4 ad
-// kanan 2 ad
-// tengah 1 ad
-// tengah kanan 1 ad
+void SolToString(Solution Sol, FILE *file)
+{
+    if (solBr(Sol) == 5 || solBr(Sol) == 7 || solBr(Sol) == 8)
+    {
+        fputc('(', file);
+        fputc(' ', file);
+    }
+    if (solBr(Sol) == 1 || solBr(Sol) == 7 || solBr(Sol) == 4)
+    {
+        fputc('(', file);
+        fputc(' ', file);
+    }
+
+    if (solCard(Sol, 0) == 10.0)
+    {
+        fputc('1', file);
+        fputc('0', file);
+    }
+    else
+    {
+        fputc(FloattoChar(solCard(Sol, 0)), file);
+    }
+    fputc(' ', file);
+    fputc(OptoChar(solOp(Sol, 0)), file);
+    fputc(' ', file);
+
+    if (solBr(Sol) == 6 || solBr(Sol) == 9 || solBr(Sol) == 10)
+    {
+        fputc('(', file);
+        fputc(' ', file);
+    }
+    if (solBr(Sol) == 2 || solBr(Sol) == 8 || solBr(Sol) == 9)
+    {
+        fputc('(', file);
+        fputc(' ', file);
+    }
+
+    if (solCard(Sol, 1) == 10.0)
+    {
+        fputc('1', file);
+        fputc('0', file);
+    }
+    else
+    {
+        fputc(FloattoChar(solCard(Sol, 1)), file);
+    }
+    fputc(' ', file);
+
+    if (solBr(Sol) == 1 || solBr(Sol) == 4 || solBr(Sol) == 7)
+    {
+        fputc(')', file);
+        fputc(' ', file);
+    }
+
+    fputc(OptoChar(solOp(Sol, 1)), file);
+    fputc(' ', file);
+
+    if (solBr(Sol) == 3 || solBr(Sol) == 4 || solBr(Sol) == 10)
+    {
+        fputc('(', file);
+        fputc(' ', file);
+    }
+
+    if (solCard(Sol, 2) == 10.0)
+    {
+        fputc('1', file);
+        fputc('0', file);
+    }
+    else
+    {
+        fputc(FloattoChar(solCard(Sol, 2)), file);
+    }
+    fputc(' ', file);
+
+    if (solBr(Sol) == 2 || solBr(Sol) == 8 || solBr(Sol) == 9)
+    {
+        fputc(')', file);
+        fputc(' ', file);
+    }
+    if (solBr(Sol) == 5 || solBr(Sol) == 7 || solBr(Sol) == 8)
+    {
+        fputc(')', file);
+        fputc(' ', file);
+    }
+
+    fputc(OptoChar(solOp(Sol, 2)), file);
+    fputc(' ', file);
+
+    if (solCard(Sol, 3) == 10.0)
+    {
+        fputc('1', file);
+        fputc('0', file);
+    }
+    else
+    {
+        fputc(FloattoChar(solCard(Sol, 3)), file);
+    }
+    fputc(' ', file);
+
+    if (solBr(Sol) == 3 || solBr(Sol) == 4 || solBr(Sol) == 10)
+    {
+        fputc(')', file);
+        fputc(' ', file);
+    }
+    if (solBr(Sol) == 6 || solBr(Sol) == 9 || solBr(Sol) == 10)
+    {
+        fputc(')', file);
+        fputc(' ', file);
+    }
+    fputc('\n', file);
+}
+
+char FloattoChar(float f)
+{
+    if (f == 1.0)
+    {
+        return 'A';
+    }
+    else if (f == 2.0)
+    {
+        return '2';
+    }
+    else if (f == 3.0)
+    {
+        return '3';
+    }
+    else if (f == 4.0)
+    {
+        return '4';
+    }
+    else if (f == 5.0)
+    {
+        return '5';
+    }
+    else if (f == 6.0)
+    {
+        return '6';
+    }
+    else if (f == 7.0)
+    {
+        return '7';
+    }
+    else if (f == 8.0)
+    {
+        return '8';
+    }
+    else if (f == 9.0)
+    {
+        return '9';
+    }
+    else if (f == 11.0)
+    {
+        return 'J';
+    }
+    else if (f == 12.0)
+    {
+        return 'Q';
+    }
+    else if (f == 13.0)
+    {
+        return 'K';
+    }
+}
+
+char OptoChar(int op)
+{
+    if (op == 0)
+    {
+        return '+';
+    }
+    else if (op == 1)
+    {
+        return '-';
+    }
+    else if (op == 2)
+    {
+        return 'x';
+    }
+    else if (op == 3)
+    {
+        return '/';
+    }
+}

@@ -2,6 +2,8 @@
   "files.associations": {
     "arraycard.h": "c",
     "solution.h": "c",
-    "arraysolution.h": "c"
+    "arraysolution.h": "c",
+    "cards.h": "c",
+    "time.h": "c"
   }
 }

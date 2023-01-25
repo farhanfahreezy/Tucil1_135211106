@@ -33,4 +33,10 @@ float Calculate2Card(int op, float c1, float c2);
 
 void NextOp(Solution *Sol);
 
+void SolToString(Solution Sol, FILE *file);
+
+char FloattoChar(float f);
+
+char OptoChar(int op);
+
 #endif

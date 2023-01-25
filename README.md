@@ -1,14 +1,44 @@
 # Tugas Kecil 1 IF2211 Strategi Algoritma
 
 ## Deskripsi
-Tugas Kecil 1 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+Pemanfaatan Algoritma Brute Force pada Permainan 24-Cards
+24-Cards adalah permainan teka-teki aritmatika yang tujuannya adalah menemukan cara untuk memanipulasi empat bilangan bulat sehingga hasil akhirnya adalah 24. Misalnya, untuk angka 4, 7, 8, 8, solusi yang mungkin adalah (7-(8/8))x4 = 24. Pada Tugas Kecil ini, saya mencoba memanfaatkan algoritma Brute Force untuk menemukan seluruh solusi yang mungkin dari kombinasi kartu yang diberikan.
 
 ## Requirement
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+Pada Tugas Kecil ini, saya menggunakan beberapa library bawaan dari C, diantaranya
+
+```
+stdio.h
+```
+
+```
+string.h
+```
+
+```
+stdlib.h
+```
+
+```
+time.h
+```
 
 ## Cara Menggunakan Program
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+Pertama, compile program menjadi executable dengan cara
+
+```
+gcc -o bin\main src\main.c src\Solution\solution.c src\Cards\cards.c src\ArraySolution\arraySolution.c
+```
+
+Lalu jalankan executable dengan cara
+
+```
+./bin/main
+```
 
 ## Author
+
 Mohammad Farhan Fahrezy 13521106
